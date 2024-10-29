@@ -1,5 +1,5 @@
 import { IInputs, IOutputs } from "./generated/ManifestTypes";
-import { HelloWorld, IHelloWorldProps } from "./HelloWorld";
+import { TenantAndPropertyInfo, ITenantAndPropertyInfoProps } from "./TenantAndPropertyInfo";
 import * as React from "react";
 
 export class PCF2 implements ComponentFramework.ReactControl<IInputs, IOutputs> {
@@ -32,9 +32,17 @@ export class PCF2 implements ComponentFramework.ReactControl<IInputs, IOutputs> 
      * @returns ReactElement root react element for the control
      */
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
-        const props: IHelloWorldProps = { name: 'Hello, World!' };
+
+        const propertyLookup = context.parameters.sam_propertyid.raw;
+
+        const props: ITenantAndPropertyInfoProps = {
+            id: propertyLookup[0].id,
+            context: context
+        };
+
+
         return React.createElement(
-            HelloWorld, props
+            TenantAndPropertyInfo, props
         );
     }
 

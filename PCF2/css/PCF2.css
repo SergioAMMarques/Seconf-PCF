@@ -1,0 +1,97 @@
+/* Outer container with soft shadow */
+.outer-container {
+    margin: 20px;
+    width: 100%;
+    background: #f8f9fa;
+    border-radius: 32px;
+    padding: 10px 20px 20px 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.outer-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Removed the glow effect */
+}
+
+/* Section labels with darker color */
+.section-label {
+    font-weight: 600;
+    font-size: 15px;
+    color: #333333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.address-container {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: #f1f3f5; /* Slightly darker for contrast */
+    border-radius: 8px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #333;
+    z-index: 1;
+}
+
+.tenantInfo-container {
+    padding: 12px;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.tenant-name {
+    font-size: 17px;
+    color: #333333;
+    text-align: center;
+    font-weight: 600;
+}
+
+.separator {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.tenant-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.tenant-detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: 8px;
+    background: #f8f9fa;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.tenant-detail:hover {
+    background-color: #f1f3f5;
+}
+
+.detail-label {
+    font-weight: 500;
+    color: #333333;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.detail-text {
+    font-size: 13px;
+    color: #555555;
+    font-weight: 400;
+}
