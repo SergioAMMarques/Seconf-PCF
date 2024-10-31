@@ -1,4 +1,7 @@
-/* Outer container with soft shadow */
+.control-container {
+    width: fit-content;
+}
+
 .outer-container {
     margin: 20px;
     width: 100%;
@@ -13,10 +16,9 @@
 
 .outer-container:hover {
     transform: translateY(-3px);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Removed the glow effect */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Section labels with darker color */
 .section-label {
     font-weight: 600;
     font-size: 15px;
@@ -29,12 +31,11 @@
     display: flex;
     align-items: center;
     padding: 8px;
-    background: #f1f3f5; /* Slightly darker for contrast */
+    background: #f1f3f5;
     border-radius: 8px;
     margin-bottom: 16px;
     font-size: 14px;
     color: #333;
-    z-index: 1;
 }
 
 .tenantInfo-container {
@@ -63,12 +64,12 @@
 
 .tenant-details {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 16px;
 }
 
 .tenant-detail {
-    flex: 1;
+    flex: 1 1 45%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -94,4 +95,34 @@
     font-size: 13px;
     color: #555555;
     font-weight: 400;
+}
+
+@media (max-width: 500px) {
+    .tenant-detail {
+        flex: 1 1 100%;
+    }
+    .tenant-details {
+        flex-direction: column;
+    }
+}
+
+.no-property-card {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.no-property-message {
+    font-size: 16px;
+    color: #555555;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }

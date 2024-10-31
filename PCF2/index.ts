@@ -33,14 +33,18 @@ export class PCF2 implements ComponentFramework.ReactControl<IInputs, IOutputs> 
      */
     public updateView(context: ComponentFramework.Context<IInputs>): React.ReactElement {
 
+        // Get the property lookup value
         const propertyLookup = context.parameters.sam_propertyid.raw;
 
+        // Create the props object for the TenantAndPropertyInfo component
         const props: ITenantAndPropertyInfoProps = {
+            // Pass the property ID from the array of property lookup value, if does not exist pass null
             id: propertyLookup[0].id,
+            // Pass the context
             context: context
         };
 
-
+        // Render the TenantAndPropertyInfo component
         return React.createElement(
             TenantAndPropertyInfo, props
         );
